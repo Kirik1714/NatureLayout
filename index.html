@@ -1,11 +1,161 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nature</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Cormorant:wght@400;600&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-    
+
+    <div class="background">
+
+        <header class="header">
+            <div class="container header__continer">
+                <a href="#" class="header__logo">
+                    <img src="./image/logo.svg" width="65" alt="Logo" class="logo">
+                </a>
+                <nav class="header__menu">
+                    <ul class="menu__list header__menu-list">
+                        <li class="menu__item"><a href="#" class="menu__link">Каталог</a></li>
+                        <li class="menu__item"><a href="#" class="menu__link">Галерея</a></li>
+                        <li class="menu__item"><a href="#" class="menu__link">О лаборатории</a></li>
+                        <li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link icon-search">
+                                <img src="./image/search.svg" alt="Search">
+                            </a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link icon-login">
+                                <img src="./image/log-in.svg" alt="Login">
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section class="nature">
+            <div class="container nature__container">
+                <div class="nature__content">
+                    <h1 class="nature__title">Крупнейшая коллекция природных артефактов</h1>
+                    <p class="nature__desc">
+                        Являясь всего лишь частью общей картины, интерактивные прототипы, которые представляют собой
+                        яркий пример европейского типа политической и социальной культуры.
+                    </p>
+                    <button class="extended-btn">Исследовать</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <main>
+        <section class="catalog">
+            <div class="container catalog__container">
+                <ul class="catalog__list">
+                    <li class="catalog__item">
+                        <article class="product-cart catalog__card">
+                            <div class="product-cart_header">
+                                <div class="product-cart_number">2.4</div>
+                                <img class="product-cart_img" src="./image/plant.svg" alt="Растение">
+                            </div>
+                            <div class="product-cart__body">
+                                <div class="product-cart__body-top">
+                                    <h3 class="product-cart__title">
+                                        Fig. 1 (plant)
+                                    </h3>
+                                    <p class="product-cart__description">
+                                        Имеется спорная точка зрения, гласящая примерно следующее: активно
+                                        развивающиеся страны третьего мира своевременно верифицированы.
+                                    </p>
+                                </div>
+                                <button class="default-btn product-cart__btn">Подробнее</button>
+
+                            </div>
+                        </article>
+                    </li>
+
+                    <li class="catalog__item">
+                        <article class="product-cart catalog__card">
+                            <div class="product-cart_header">
+                                <div class="product-cart_number">3.1</div>
+
+                                <img class="product-cart_img" src="./image/flower.svg" alt="Цветок">
+                            </div>
+                            <div class="product-cart__body">
+                                <div class="product-cart__body-top">
+                                    <h3 class="product-cart__title">
+                                        Fig. 2 (flower)
+                                    </h3>
+                                    <p class="product-cart__description">
+                                        Прежде всего, синтетическое тестирование влечет за собой процесс
+                                        внедрения и модернизации условий.
+
+                                    </p>
+                                </div>
+                                <button class="default-btn product-cart__btn">Подробнее</button>
+
+                            </div>
+                        </article>
+                    </li>
+                    <li class="catalog__item">
+                        <article class="product-cart catalog__card">
+                            <div class="product-cart_header">
+                                <div class="product-cart_number">1.2</div>
+
+                                <img class="product-cart_img" src="./image/leaf.svg" alt="Лепесток">
+                            </div>
+                            <div class="product-cart__body">
+                                <div class="product-cart__body-top">
+                                    <h3 class="product-cart__title">
+                                        Fig. 3 (leaf)
+                                    </h3>
+                                    <p class="product-cart__description">
+                                        Лишь непосредственные участники прогресса неоднозначны
+                                        и будут в равной степени предоставлены сами себе для работы.
+
+                                    </p>
+                                </div>
+                                <button class="default-btn product-cart__btn">Подробнее</button>
+
+                            </div>
+                        </article>
+                    </li>
+                    <li class="catalog__item">
+                        <article class="product-cart catalog__card">
+                             <div class="product-cart_header">
+                                <div class="product-cart_number">1.4</div>
+                                <img class="product-cart_img" src="./image/wood.svg" alt="Дерево">
+                            </div>
+                            <div class="product-cart__body">
+                                <div class="product-cart__body-top">
+                                    <h3 class="product-cart__title">
+                                        Fig. 4 (wood) </h3>
+                                    <p class="product-cart__description">
+                                        Базовый вектор развития не даёт нам иного выбора, кроме определения новых
+                                        предложений.
+                                    </p>
+                                </div>
+                                <button class="default-btn product-cart__btn">Подробнее</button>
+
+                            </div>
+                        </article>
+                    </li>
+                </ul>
+
+            </div>
+
+        </section>
+    </main>
+
 </body>
+
 </html>

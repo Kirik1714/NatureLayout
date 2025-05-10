@@ -1,0 +1,290 @@
+:root {
+    --white: #fff;
+    --grey: #899d9d;
+    --background: #1d2f30;
+    --background-shade: #0b1919;
+    --green-text: #506829;
+    --primary-green: #bae249;
+    --green-activeclick: #688b05;
+    --green-focus: #83a440;
+    --green-hover: #91ac46;
+    --red: #e24949;
+    --font-family: "Open Sans", sans-serif;
+    --second-family: "Cormorant", sans-serif;
+    --transition-duration: 0.3s;
+}
+
+body {
+    font-size: 16px;
+    font-family: var(--font-family), Helvetica, sans-serif;
+    color: var(--white);
+    margin: 0;
+    background-color: var(--background);
+}
+
+/* General style */
+.extended-btn {
+    display: inline-flex;
+    align-items: center;
+    width: 160px;
+    height: 23px;
+    padding: 0px;
+    gap: 10px; 
+    font-size: 18px;
+    font-weight: 600;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--primary-green);
+    transition: color 0.3s ease;
+    text-decoration: none;
+
+}
+
+.extended-btn::after {
+    content: '→'; 
+    display: inline-block;
+    transition: inherit;
+    font-size: 30px; 
+ 
+}
+
+.extended-btn:hover,
+.extended-btn:focus {
+    color: var(--green-hover);
+}
+
+.extended-btn:active {
+    color: var(--green-activeclick);
+}
+
+.default-btn {
+    position: relative; /* Для позиционирования псевдоэлемента */
+    display: block;
+    padding: 10px 0; 
+    background-color: transparent; 
+    color: var(--green-activeclick); 
+    font-size: 18px; 
+    font-weight: bold;
+    text-decoration: none; 
+    border: 1px solid var(--primary-green); 
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease; 
+    cursor: pointer;
+    width: 145px;
+}
+
+.default-btn::before {
+    content: ''; 
+    position: absolute; 
+    top: -4px; 
+    left: -4px; 
+    right: -4px; 
+    bottom: -4px; 
+    border: 1px solid var(--primary-green);
+    border-radius: 5px; 
+    z-index: -1; 
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
+}
+
+.default-btn:focus::before {
+    opacity: 1; 
+}
+
+.default-btn:hover {
+    background-color: var(--primary-green); 
+    color: #000000; 
+}
+
+.default-btn:active {
+    background-color: var(--green-hover); 
+    color: #000000; 
+}
+
+
+
+
+
+/* Обертка */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header */
+.header {
+   position: relative;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--background);
+    
+}
+
+.header__continer {
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 15px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu__list {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu__item {
+    display: flex;
+    align-items: center;
+}
+
+.icon-search img {
+    margin-left: 20px;
+}
+
+.menu__link {
+    color: var(--white);
+    text-decoration: none;
+    transition: color var(--transition-duration), background-color var(--transition-duration);
+}
+
+.menu__link:hover {
+    color: var(--green-hover);
+}
+
+.menu__link:active {
+    color: var(--green-activeclick);
+}
+
+/* Background */
+.background {
+    position: relative; 
+    background-image: url('../image/background.svg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; 
+}
+
+.background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(11, 25, 25, 0.7);
+    z-index: 1; 
+}
+
+/* Nature */
+
+.nature__container {
+    display: flex;
+    align-items: center;
+    padding: 115px 0;
+    position: relative; 
+    z-index: 2; 
+}
+
+.nature__content {
+    flex-basis: 690px;
+}
+
+.nature__title {
+
+  font-weight: 700;
+    font-size: 58px;
+    line-height: 100%;
+    margin-bottom: 16px;
+    font-family: var(--second-family);
+    color: var(--white); 
+  
+}
+
+.nature__desc {
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 150%;
+    margin-bottom: 30px;
+    font-family: var(--second-family);
+    color: var(--white);
+}
+
+/* Растения */
+
+.catalog{
+    margin-top: 58px;
+
+}
+.catalog__item{
+    max-width: 255px;
+    height: 525px;
+    border: 1px solid black;
+
+}
+
+
+.catalog__list{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+.product-cart__body{
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 16px;
+}
+
+.product-cart__body-top{
+   flex: 1 1 auto;
+   
+}
+
+.product-cart_header{
+    position: relative;
+    background-color: var(--background-shade);
+    padding: 30px 16px;
+
+  
+}
+.product-cart_number{
+    position: absolute;
+    border: 1px solid var(--grey);
+    font-family: var(--second-family);
+    border-radius: 50%;
+    text-align: center;
+    font-weight: 700;
+    font-size: 16px;
+    width: 25px;
+    height: 25px;
+    color:var(--grey);
+    top: 12px;
+  
+
+}
+.product-cart__title{
+font-family: var(--second-family);
+font-weight: 700;
+font-size: 24px;
+line-height: 150%;
+color: var(--white);
+}
+
+
+.product-cart__description{
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+color: var(--grey);
+}
+
