@@ -18,30 +18,25 @@
     <div class="background">
 
         <header class="header">
-            <div class="container header__continer">
-                <a href="#" class="header__logo">
-                    <img src="./image/logo.svg" width="65" alt="Logo" class="logo">
-                </a>
-                <nav class="header__menu">
-                    <ul class="menu__list header__menu-list">
-                        <li class="menu__item"><a href="#" class="menu__link">Каталог</a></li>
-                        <li class="menu__item"><a href="#" class="menu__link">Галерея</a></li>
-                        <li class="menu__item"><a href="#" class="menu__link">О лаборатории</a></li>
-                        <li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
-                        <li class="menu__item">
-                            <a href="#" class="menu__link icon-search">
-                                <img src="./image/search.svg" alt="Search">
-                            </a>
-                        </li>
-                        <li class="menu__item">
-                            <a href="#" class="menu__link icon-login">
-                                <img src="./image/log-in.svg" alt="Login">
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
+  <div class="container header__continer">
+    <a href="#" class="header__logo">
+      <img src="./image/logo.svg" width="65" alt="Logo" class="logo">
+    </a>
+    <nav class="header__menu">
+      <ul class="menu__list header__menu-list">
+        <li class="menu__item"><a href="#" class="menu__link">Каталог</a></li>
+        <li class="menu__item"><a href="#" class="menu__link">Галерея</a></li>
+        <li class="menu__item"><a href="#" class="menu__link">О лаборатории</a></li>
+        <li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
+        <li class="menu__item"><a href="#" class="menu__link icon-search"><img src="./image/search.svg" alt="Search"></a></li>
+        <li class="menu__item"><a href="#" class="menu__link icon-login"><img src="./image/log-in.svg" alt="Login"></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Меню, которое будет под header -->
+<div class="mobile-menu container"></div>
 
         <section class="nature">
             <div class="container nature__container">
@@ -161,6 +156,7 @@
                         Новые артефакты
                     </h2>
                     <div class="artifacts__collection">
+                        <div class="artifacts__wrapper">
                         <ul class="artifacts__items">
                             <li class="artifacts__item">
                                 <div class="artifact-card">
@@ -245,6 +241,7 @@
                             </li>
 
                         </ul>
+                        </div>
                         <div class="artifacts__desc">
                             <div class="description">
                                 <h2 class="description__title">
@@ -311,6 +308,32 @@
 
     </footer>
 
+    <script>
+  function updateMenu() {
+    const width = window.innerWidth;
+    const headerMenu = document.querySelector('.header__menu-list');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const allItems = headerMenu.querySelectorAll('.menu__item');
+    
+    // Удалить всё из мобильного меню
+    mobileMenu.innerHTML = '';
+
+    if (width <= 825) {
+      const mobileList = document.createElement('ul');
+      mobileList.className = 'menu__list';
+
+      // Клонируем первые 4 пункта (текстовые)
+      for (let i = 0; i < allItems.length - 2; i++) {
+        mobileList.appendChild(allItems[i].cloneNode(true));
+      }
+
+      mobileMenu.appendChild(mobileList);
+    }
+  }
+
+  window.addEventListener('load', updateMenu);
+  window.addEventListener('resize', updateMenu);
+</script>
 </body>
 
 </html>
